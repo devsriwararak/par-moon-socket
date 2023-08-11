@@ -32,7 +32,7 @@ io.on("connection", (socket) => {
     //io.sockets.emit("shop", data)
     try {
       axios
-        .get("https://bankcash1.herokuapp.com/Show")
+        .get("http://192.168.1.96:8000/Show")
         .then((result) => io.sockets.emit("show_display_1", result.data))
         .catch((err) => res.send(err));
     } catch (err) {
@@ -45,7 +45,7 @@ io.on("connection", (socket) => {
 
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -56,7 +56,7 @@ io.on("connection", (socket) => {
     // ข้อมูลหลัก
     mainData = (data) => {
       try {
-        axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+        axios.get("http://192.168.1.96:8000/Show").then((newData) => {
           const updateData = {
             main: {
               ...newData.data,
@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
 
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -87,7 +87,7 @@ io.on("connection", (socket) => {
     mainData = (data) => {
       try {
         axios
-          .get("https://bankcash1.herokuapp.com/Show/List/Top")
+          .get("http://192.168.1.96:8000/Show/List/Top")
           .then((newData) => {
             const updateData = {
               main: {
@@ -114,7 +114,7 @@ io.on("connection", (socket) => {
   socket.on("number_0", () => {
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -138,7 +138,7 @@ io.on("connection", (socket) => {
   socket.on("number_1", () => {
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -162,7 +162,7 @@ io.on("connection", (socket) => {
   socket.on("number_2", () => {
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -186,7 +186,7 @@ io.on("connection", (socket) => {
   socket.on("number_3", () => {
     // ข้อมูลเสริม
     try {
-      axios.get("https://bankcash1.herokuapp.com/Show").then((newData) => {
+      axios.get("http://192.168.1.96:8000/Show").then((newData) => {
         data = newData.data;
         mainData(data);
       });
@@ -210,7 +210,7 @@ io.on("connection", (socket) => {
   socket.on("number_4", () => {
     try {
       axios
-        .get("https://bankcash1.herokuapp.com/Show")
+        .get("http://192.168.1.96:8000/Show")
         .then((result) => io.sockets.emit("show_number_4", result.data))
         .catch((err) => res.send(err));
     } catch (err) {
